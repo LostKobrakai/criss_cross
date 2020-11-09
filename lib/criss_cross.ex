@@ -7,6 +7,7 @@ defmodule CrissCross do
 
   @base "_build/erts"
 
+  @spec ubuntu(14 | 16 | 18 | 20, otp_version :: String.t()) :: Path.t()
   def ubuntu(os_version, otp_version) do
     os = validate_os_version!(os_version)
     file = Path.join([@base, os, "#{otp_version}.tar.gz"])
